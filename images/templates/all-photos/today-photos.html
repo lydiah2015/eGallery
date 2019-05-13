@@ -1,16 +1,24 @@
 {% extends 'all-photos/base.html'%}
 {% block content %}
+<script>
+    function CopyFun() {
+    var copyText = document.getElementById("link");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Text has been coppied: " + copyText.value);
+    }
+    </script>
+
 <h1 style="text-align:center;"><b>WELCOME TO e-GALLERY</h1>
 <div class="row">
   {% for image in images %}
   <div class="container col col-md-3">
-    <!-- <div class="container-fluid"> -->
     <a data-caption="{{image.Description}} <p>{{image.Name}}</p><p>{{image.category}}</p>" href="{{image.image.url}}" data-fancybox>
       <img class="Image" style='width:40vh; height:50vh;' src="{{image.image.url}}" alt="image">
     </a>
   {{image.location}}
   </div>
   {% endfor %}
-
   {% endblock %}
+
 </div>
