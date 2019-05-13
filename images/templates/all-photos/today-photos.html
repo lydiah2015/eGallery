@@ -16,7 +16,7 @@
     <a data-caption="{{image.Description}} <p>{{image.Name}}</p><p>{{image.category}}</p>" href="{{image.image.url}}" data-fancybox>
       <img class="Image" style='width:40vh; height:50vh;' src="{{image.image.url}}" alt="image">
     </a>
-  <p>{{image.location}}</p>
+  <p><b>{{image.location}}</b></p>
   <input type="text" value="{{image.image.url}}" id="link"> <button type="button" onclick="CopyFun()">Copy</button>
   </div>
   {% endfor %}
