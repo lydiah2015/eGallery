@@ -16,6 +16,11 @@ class ImageTestClass(TestCase):
         self.new_image.save()
         self.assertTrue(isinstance(self.new_image, Image))
 
+    def test_save(self):
+        self.image.save_category()
+        new_image = Image.objects.all()
+        self.assertTrue(len(images) > 0)
+
 
 class LocationTestClass(TestCase):
     def setUp(self):
@@ -24,6 +29,11 @@ class LocationTestClass(TestCase):
     def test_instance(self):
         self.location.save()
         self.assertTrue(isinstance(self.location, Location))
+
+    def test_save(self):
+        self.location.save_category()
+        location = Location.objects.all()
+        self.assertTrue(len(location) > 0)
 
 
 class CategoryTestClass(TestCase):
